@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Lovely Girl</title>
+    <style>
+        *,
+        *::before,
+        *::after {
+            padding: 0;
+            margin: 0 auto;
+            box-sizing: border-box;
+        }
+
+        body {
+            background: #09111d;
+            /* background-image: radial-gradient(circle at center, #222, #111 300px); */
+            color: #fff;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            perspective: 420px;
+            overflow: hidden;
+            flex-direction: column;
+        }
+
+        .button--no {
+            position: absolute;
+            
+        }
+
+        .heart {
+            z-index: 2;
+            position: absolute;
+            top: 70px;
+            height: 70px;
+            width: 70px;
+            background: #f20044;
+            transform: rotate(-45deg);
+            box-shadow: -10px 10px 90px #f20044;
+            animation: heart 0.7s linear infinite;
+        }
+        @keyframes heart{
+            0%{
+                transform: rotate(-45deg) scale(1.07);
+            }
+            80%{
+                transform: rotate(-45deg) scale(1.0);
+            }
+            100%{
+                transform: rotate(-45deg) scale(0.8);
+            }
+        }
+
+        .heart:before {
+            content: '';
+            position: absolute;
+            height: 70px;
+            width: 70px;
+            background: #f20044;
+            top: -50%;
+            border-radius: 50px;
+            box-shadow: -10px -10px 90px #f20044;
+
+        }
+
+        .heart:after {
+            content: '';
+            position: absolute;
+            height: 70px;
+            width: 70px;
+            background: #f20044;
+            right: -50%;
+            border-radius: 50px;
+            box-shadow: 10px 10px 90px #f20044;
+
+        }
+
+        .pack {
+            position: absolute;
+            width: 100%;
+            height: 100vh;
+            overflow: hidden;
+        }
+
+        .particles {
+            position: relative;
+            display: flex;
+            z-index: 1;
+            padding: 0 20px;
+        }
+
+        .particles span {
+            position: relative;
+            bottom: 30px;
+            width: 10px;
+            min-width: 10px;
+            height: 10px;
+            background: #4fc3dc;
+            box-shadow: 0 0 0 10px #4fc3dc44,
+            0 0 50px #4fc3dc,
+            -100px 0 #4fc3dc99,
+            100px 0 #ff2d7599;
+            margin: 0 2px;
+            border-radius: 50%;
+            animation: animate 15s ease infinite;
+            animation-duration: calc(125s / var(--i));
+        }
+
+        .particles span:nth-child(even) {
+            background: #ff2d75;
+            box-shadow: 0 0 10px #ff2d7544,
+            0 0 50px #ff2d75,
+            -100px 0 #4fc3dc99,
+            100px 0 #4fc3dc99;
+        }
+        @keyframes animate {
+            0% {
+                transform: translateY(120vh) scale(0) rotate(0deg);
+            }
+            10% {
+                transform: translateY(100vh) scale(1) rotate(0deg);
+            }
+            100% {
+                transform: translateY(-50vh) scale(0.5) rotate(360deg);
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="heart"></div>
+
+
+
+
+    <div class="pack">
+        <div class="particles">
+            <span style="--i:11;"></span>
+            <span style="--i:12;"></span>
+            <span style="--i:24;"></span>
+            <span style="--i:10;"></span>
+            <span style="--i:14;"></span>
+            <span style="--i:23;"></span>
+            <span style="--i:18;"></span>
+            <span style="--i:16;"></span>
+            <span style="--i:19;"></span>
+            <span style="--i:20;"></span>
+            <span style="--i:22;"></span>
+            <span style="--i:25;"></span>
+            <span style="--i:18;"></span>
+            <span style="--i:21;"></span>
+            <span style="--i:27;"></span>
+            <span style="--i:15;"></span>
+            <span style="--i:26;"></span>
+            <span style="--i:17;"></span>
+            <span style="--i:13;"></span>
+            <span style="--i:28;"></span>
+            <span style="--i:11;"></span>
+            <span style="--i:12;"></span>
+            <span style="--i:24;"></span>
+            <span style="--i:10;"></span>
+            <span style="--i:14;"></span>
+            <span style="--i:23;"></span>
+            <span style="--i:18;"></span>
+            <span style="--i:16;"></span>
+            <span style="--i:19;"></span>
+            <span style="--i:20;"></span>
+            <span style="--i:22;"></span>
+            <span style="--i:25;"></span>
+            <span style="--i:18;"></span>
+            <span style="--i:21;"></span>
+            <span style="--i:27;"></span>
+            <span style="--i:15;"></span>
+            <span style="--i:26;"></span>
+            <span style="--i:17;"></span>
+            <span style="--i:13;"></span>
+            <span style="--i:28;"></span>
+        </div>
+    </div>
+
+    <button class="button--no">Tidak</button>
+
+    <script>
+        const b = document.querySelector('button.button--no')
+        b.addEventListener("click", moveHover)
+
+        function moveHover(){
+            const i=Math.floor(Math.random()*500)+1 ;
+            const j=Math.floor(Math.random()*500)+1 ;
+
+            b.style.left=i+"px"
+            b.style.top=j+"px"
+        }
+
+    </script>
+</body>
+</html>
