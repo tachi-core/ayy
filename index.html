@@ -15,8 +15,10 @@
         }
 
         body {
-            background: #09111d;
-            /* background-image: radial-gradient(circle at center, #222, #111 300px); */
+            background: #3b3b6d;
+            /* background: #09111d; */
+            /* background: #bf4949; */
+            background-image: radial-gradient(circle at center, #3b3b6d, #09111d 300px);
             color: #fff;
             min-height: 100vh;
             display: flex;
@@ -34,10 +36,34 @@
             height: 35%;
         } */
 
+        .image {
+            background: #a16b56;
+            /* background: #bf4949; */
+            transform: rotateZ(-8deg);
+            box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+            padding: 15px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .image .card {
+            z-index: 1;
+            position: absolute;
+            background: #a16b56;
+            /* background: #bf4949; */
+            transform: rotateZ(-10deg);
+            /* size: inherit; */
+            width: 320px;
+            height: 260px;
+            box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
+        }
+
         img {
+            z-index: 2;
             width: 300px;
             transform: rotateZ(-10deg);
-            box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+            /* background: transparent; */
         }
 
         .button--no {
@@ -197,7 +223,10 @@
 
     <!-- <div class="gambar"></div> -->
 
-    <img src="image.png" alt="">
+    <div class="image">
+        <img src="image.png" alt="">
+        <div class="card"></div>
+    </div>
 
     <button class="button--no">Tidak</button>
 
