@@ -83,6 +83,8 @@ h2 {
     width: 150%;
     z-index: -1;
     background-repeat: no-repeat;
+	border: none;
+    outline: none;
 }
 
 .btnYes.animate::before {
