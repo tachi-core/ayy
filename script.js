@@ -14,16 +14,6 @@ function nextPage() {
 };
 
 
-// b.addEventListener("click", moveClick)
-// function moveClick(){
-//     const i=Math.floor(Math.random()*500)+1;
-//     const j=Math.floor(Math.random()*500)+1;
-
-//     b.style.left=i+"px"
-//     b.style.top=j+"px"
-// }
-
-
 btnYes.addEventListener('click', () => {
     question.innerHTML = 'I Love You Too :)';
 });
@@ -34,4 +24,14 @@ btnNo.addEventListener('click', () => {
 
     btnNo.style.left = i + 'px';
     btnNo.style.top = j + 'px';
+});
+
+
+btnYes.addEventListener('click', (e) => {
+    e.preventDefault();
+    btnYes.classList.add("animate");
+
+    setTimeout(() => {
+        btnYes.classList.remove("animate");
+    }, 600); // 1s = 100ms
 });
